@@ -1,12 +1,4 @@
-"""A setuptools based setup module.
-See:
-https://packaging.python.org/en/latest/distributing.html
-https://github.com/pypa/sampleproject
-"""
-
-# Always prefer setuptools over distutils
 from setuptools import setup, find_packages
-# To use a consistent encoding
 from codecs import open
 from os import path
 
@@ -14,59 +6,34 @@ here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
 long_description = ""
-if path.exists(path.join(here, 'README.rst')):
-    with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
-        long_description = f.read()
+
+try:
+    from pypandoc import convert
+    if path.exists(path.join(here, 'README.md')):
+        long_description = convert('README.md', 'rst')
+except ImportError:
+    print("warning: pypandoc module not found, could not convert Markdown to RST")
 
 setup(
     name='command-line-parser',
     version='0.0.1',
-
     description='A customizable command line parser',
     long_description=long_description,
     url='https://github.com/mjalas/command-line-parser',
-
-    # Author details
     author='Mats Jalas',
     author_email='',
-
-    # Choose your license
     license='MIT',
 
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
-        # How mature is this project? Common values are
-        #   3 - Alpha
-        #   4 - Beta
-        #   5 - Production/Stable
         'Development Status :: 3 - Alpha',
-
-        # Indicate who your project is intended for
         'Intended Audience :: Developers',
-        'Topic :: Software Development :: Network application testing',
-
-        # Pick your license as you wish (should match "license" above)
+        'Topic :: Software Development :: Libraries',
         'License :: OSI Approved :: MIT License',
-
-        # Specify the Python versions you support here. In particular, ensure
-        # that you indicate whether you support Python 2, Python 3 or both.
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
-
-    # What does your project relate to?
     keywords='command-line-parsing argument-parsingoption-parsing',
-    setup_requires=['nose>=1.0', 'coverage>=4.0.3'],
-
-    # You can just specify the packages manually here if your project is
-    # simple. Or you can use find_packages().
+    setup_requires=['nose>=1.0', 'coverage>=4.0.3', 'pypandoc>=1.1.3'],
     packages=find_packages(exclude=['contrib', 'docs', 'tests', 'env_creators']),
-    # List additional groups of dependencies here (e.g. development
-    # dependencies). You can install these using the following syntax,
-    # for example:
-    # $ pip install -e .[dev,test]
-    # extras_require={
-    #    'dev': ['check-manifest'],
-    #    'test': ['coverage'],
-    # },
 )
