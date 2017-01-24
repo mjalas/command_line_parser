@@ -5,6 +5,8 @@
 # Virtual environments
 .env
 .venv
+/venv/
+/.tox/
 
 __pycache__*
 
