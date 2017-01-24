@@ -4,8 +4,6 @@ python:
   - "3.5"
 install: pip install tox-travis
 script: tox -e travis
-before_deploy:
-  script: apt-get install pandoc
 deploy:
   provider: pypi
   user: "$PYPI_USERNAME"
