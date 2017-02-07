@@ -1,8 +1,6 @@
 
 class Option(object):
-    """
-    Generic user created option.
-    """
+    """Generic user created option."""
 
     def __init__(self, shortname, longname, dest, help_text):
         self.short = shortname
@@ -12,9 +10,7 @@ class Option(object):
 
 
 class NetworkAddressOption(object):
-    """
-    Default network address option
-    """
+    """Default network address option."""
 
     def __init__(self):
         self.short = "-a"
@@ -24,9 +20,7 @@ class NetworkAddressOption(object):
 
 
 class PortNumberOption(object):
-    """
-    Default port number option
-    """
+    """Default port number option."""
 
     def __init__(self):
         self.short = "-p"
@@ -36,12 +30,19 @@ class PortNumberOption(object):
 
 
 class FileOption(object):
-    """
-    Default file option
-    """
+    """Default file option."""
 
     def __init__(self):
         self.short = "-f"
         self.long = "--file"
         self.dest = "file"
         self.help = "Path to file."
+
+class OutputOption(object):
+    """Default output option."""
+
+    def __init__(self):
+        self.short = "-o"
+        self.long = "--output"
+        self.dest = "output"
+        self.help = "Output path."
