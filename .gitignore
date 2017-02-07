@@ -21,6 +21,7 @@ __pycache__*
 /.eggs/
 /*.egg-info
 /*.egg
+*.egg-info
 
 /build/
 
