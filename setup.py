@@ -16,7 +16,7 @@ here = path.abspath(path.dirname(__file__))
 
 setup(
     name='command-line-parser',
-    version='0.0.3',
+    version='0.0.4',
     description='A customizable command line parser',
     #long_description=long_description,
     url='https://github.com/mjalas/command-line-parser',
