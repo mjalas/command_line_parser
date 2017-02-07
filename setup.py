@@ -35,5 +35,5 @@ setup(
     ],
     keywords='command-line-parsing argument-parsingoption-parsing',
     setup_requires=['nose>=1.0', 'coverage>=4.0.3', 'pypandoc>=1.1.3'],
-    packages=find_packages(exclude=['contrib', 'docs', 'tests', 'env_creators']),
+    packages=find_packages(exclude=['tests'])
 )
