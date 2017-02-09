@@ -4,6 +4,7 @@ from command_line_parser.options import Option
 from command_line_parser.options import FileOption
 from command_line_parser.options import NetworkAddressOption
 from command_line_parser.options import PortNumberOption
+from command_line_parser.options import OutputOption
 
 
 class TestOptionParser(TestCase):
@@ -63,3 +64,25 @@ class TestOptionParser(TestCase):
         parser.parseArguments(args)
         self.assertEqual(localhost, parser.address)
         self.assertEqual(port, parser.port)
+
+    def testOutputOption(self):
+        args = ['test.py', '-o', 'filename']
+        option = OutputOption()
+        options = [option]
+        usage = ""
+        version = ""
+        parser = CommandLineOptionParser(options, usage, version)
+        parser.parseArguments(args)
+        self.assertEqual('filename', parser.output)
+
+    def testEmptyOptions(self):
+        args = ['test.py', '-f', 'filename']
+        file_option = FileOption()
+        test_option = Option('-t', '--test', 'test', '')
+        options = [file_option, test_option]
+        usage = ""
+        version = ""
+        parser = CommandLineOptionParser(options, usage, version)
+        parser.parseArguments(args)
+        self.assertEqual('filename', parser.file)
+        self.assertEqual(None, parser.test)

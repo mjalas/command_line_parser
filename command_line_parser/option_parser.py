@@ -16,10 +16,14 @@ class CommandLineOptionParser(object):
 
     def parseArguments(self, args):
         (options, args) = self.parser.parse_args(args)
+        print(options)
         for option in self.input_options:
+            print(str(option.dest))
             attr = getattr(options, option.dest)
             if attr is not None:
                 setattr(self, option.dest, attr)
+            else:
+                setattr(self, option.dest, None)
 
         self.args = args
         self.options = options
