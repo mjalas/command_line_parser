@@ -1,4 +1,5 @@
 # Command-line parser
+[![PyPI version](https://badge.fury.io/py/command-line-parser.svg)](https://badge.fury.io/py/command-line-parser)
 [![Build Status](https://travis-ci.org/mjalas/command_line_parser.svg?branch=master)](https://travis-ci.org/mjalas/command_line_parser)
 [![Coverage Status](https://coveralls.io/repos/github/mjalas/command_line_parser/badge.svg?branch=master)](https://coveralls.io/github/mjalas/command_line_parser?branch=master)
 [![Code Health](https://landscape.io/github/mjalas/command_line_parser/master/landscape.svg?style=flat)](https://landscape.io/github/mjalas/command_line_parser/master)

@@ -30,10 +30,9 @@ setup(
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Libraries',
         'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
-    keywords='command-line-parsing argument-parsingoption-parsing',
+    keywords='command-line-parsing argument-parsing option-parsing',
     setup_requires=['nose>=1.0', 'coverage>=4.0.3', 'pypandoc>=1.1.3'],
     packages=find_packages(exclude=['tests'])
 )
