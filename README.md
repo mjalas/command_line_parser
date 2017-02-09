@@ -22,3 +22,7 @@ git clone git@github.com:mjalas/command_line_parser.git
 cd command-line-parser
 python setup.py install
 ```
+
+## Usage
+
+The unit tests in the tests folder describes how to use the librarys customizable option and default options.
